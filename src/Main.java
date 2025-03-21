@@ -8,7 +8,7 @@ public class Main {
         Car renault = new GasPoweredCar("Renault Clio IV", 15.4,4);
         runRace(renault);
 
-        Car skoda = new DieselCar("Skoda Fabia 3",5,3,1.4);
+        Car skoda = new DieselCar("Skoda Fabia 3",4.5,3,1.4);
         runRace(skoda);
     }
 

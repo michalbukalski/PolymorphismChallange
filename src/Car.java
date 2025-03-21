@@ -71,7 +71,8 @@ class DieselCar extends Car{
 
     @Override
     protected void runEngine() {
-        System.out.printf("Consumption: -> usage exceeds the average: %.2f %n", consumptionPerHundred);
+        DecimalFormat df = new DecimalFormat("#.#");
+        System.out.printf("Consumption: -> usage exceeds the average: %sl %n", df.format(consumptionPerHundred));
     }
 
     @Override
