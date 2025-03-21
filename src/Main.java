@@ -10,6 +10,12 @@ public class Main {
 
         Car skoda = new DieselCar("Skoda Fabia 3",4.5,3,1.4);
         runRace(skoda);
+
+        Car tesla = new ElectricCar("Tesla Model 3", 568,75);
+        runRace(tesla);
+
+        Car ferrariHybrid = new Hybrid("Ferrari Hybrid", 16,8,500);
+        runRace(ferrariHybrid);
     }
 
     public static void runRace(Car car){

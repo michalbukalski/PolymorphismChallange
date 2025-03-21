@@ -81,4 +81,63 @@ class DieselCar extends Car{
         System.out.printf("Diesel engine has a size of %sl %n", df.format(engineSize));
         runEngine();
     }
+
 }
+
+class ElectricCar extends Car {
+
+    private double averageKmPerCharge;
+    private int batterySize =6;
+
+    public ElectricCar(String description) {
+        super(description);
+    }
+
+    public ElectricCar(String description, double averageKmPerCharge, int batterySize) {
+        super(description);
+        this.averageKmPerCharge = averageKmPerCharge;
+        this.batterySize = batterySize;
+    }
+
+    @Override
+    public void startEngine() {
+        System.out.printf("BEV -> swith %d kWh battery on, Ready! %n", batterySize);
+    }
+
+    @Override
+    protected void runEngine() {
+        System.out.printf("BEV -> usage under the average: %.2f %n", averageKmPerCharge);
+    }
+}
+
+class Hybrid extends Car {
+
+    private double averageKmPerLiter;
+    private int cylinders =6;
+    private int batterySize;
+
+    public Hybrid(String description) {
+        super(description);
+    }
+
+    public Hybrid(String description, double averageKmPerLiter, int cylinders, int batterySize) {
+        super(description);
+        this.averageKmPerLiter = averageKmPerLiter;
+        this.cylinders = cylinders;
+        this.batterySize = batterySize;
+
+    }
+
+    @Override
+    public void startEngine() {
+        System.out.printf("Hybrid -> %d cylinders are fired up. %n", cylinders);
+        System.out.printf("Hybrid -> switch %d kWh battery on, Ready!%n", batterySize);
+    }
+
+    @Override
+    protected void runEngine() {
+        System.out.printf("Hybrid -> usage under the average: %.2f %n", averageKmPerLiter);
+    }
+}
+
+
