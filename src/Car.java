@@ -50,7 +50,7 @@ class GasPoweredCar extends Car {
 
 class DieselCar extends Car{
     private  double consumptionPerHundred;
-    private  int cylinders;
+    private  int cylinders=3;
     private  double engineSize;
 
     public DieselCar(String description) {
@@ -78,5 +78,6 @@ class DieselCar extends Car{
     public void drive() {
         DecimalFormat df = new DecimalFormat("#.#");
         System.out.printf("Diesel engine has a size of %sl %n", df.format(engineSize));
+        runEngine();
     }
 }
